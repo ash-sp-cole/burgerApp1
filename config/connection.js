@@ -1,25 +1,16 @@
 var mysql = require("mysql");
 
-var connection;
-
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "Codepass7",
     database: "burgers_db"
   });
-}
+
 
 connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  } else {
-    console.log("connected as id " + connection.threadId);
-  }
+  if (err) throw err;
+ 
 });
 
 //exports this file content so other files can access it
