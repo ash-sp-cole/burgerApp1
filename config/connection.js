@@ -15,3 +15,4 @@ connection.connect(function(err) {
 
 //exports this file content so other files can access it
 module.exports = connection;
+
